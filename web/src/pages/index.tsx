@@ -1,53 +1,72 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
+
+import { useContext } from 'react';
+
+import { ThemeContext } from 'styled-components';
 
 import { FaUser, FaLock, FaDiscord, FaGithub } from 'react-icons/fa';
-import { GoogleFonts } from 'next-google-fonts';
 
-import styles from '@/styles/Home.module.css';
+import { rgba } from 'polished';
+
+import {
+  Container,
+  ContainerLogin,
+  ContainerInput,
+  Input,
+  Button,
+  ContainerSocial,
+} from '@/styles/home';
 
 export default function Home() {
+  const router = useRouter();
+  const theme = useContext(ThemeContext);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    router.push('/dashboard');
+  };
+
   return (
     <>
-      <GoogleFonts href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" />
       <Head>
         <title>Início - SpetacularNetwork</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.container}>
-        <section className={styles.containerLogin}>
+      <Container>
+        <ContainerLogin onSubmit={handleSubmit}>
           <h1>Acesse sua conta</h1>
-          <div className={styles.containerInput}>
-            <FaUser size={28} color="#7A899A" />
-            <input
+          <ContainerInput>
+            <FaUser size={28} color={rgba(theme.background, 0.75)} />
+            <Input
               type="text"
               name="username"
               placeholder="Digite seu nickname"
             />
-          </div>
-          <div className={styles.containerInput}>
-            <FaLock size={28} color="#7A899A" />
-            <input
+          </ContainerInput>
+          <ContainerInput>
+            <FaLock size={28} color={rgba(theme.background, 0.75)} />
+            <Input
               type="password"
-              name="username"
+              name="password"
               placeholder="Digite sua senha"
             />
-          </div>
-          <button className={styles.button}>Entrar</button>
-        </section>
-        <div className={styles.containerSocial}>
+          </ContainerInput>
+          <Button type="submit">Entrar</Button>
+        </ContainerLogin>
+        <ContainerSocial>
           <a href="https://github.com/SMCodesP/SMEconomy" target="_blank">
-            <FaGithub size={32} color="#191622" />
+            <FaGithub size={32} color={theme.background} />
           </a>
           <hr />
           <a
             href="https://discord.com/users/520311747098312725"
             target="_blank"
           >
-            <FaDiscord size={32} color="#191622" />
+            <FaDiscord size={32} color={theme.background} />
           </a>
-        </div>
-      </main>
+        </ContainerSocial>
+      </Container>
     </>
   );
 }
