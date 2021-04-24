@@ -68,13 +68,13 @@ const Dashboard: React.FC = () => {
                   color={theme.pink}
                 />
                 <SecundaryMoneyCard
-                  name="Safiras"
+                  name="Tokens"
                   title="$ 13 B"
                   Icon={ImDiamonds}
                   color={theme.yellow}
                 />
                 <SecundaryMoneyCard
-                  name="Safiras"
+                  name="Blocos"
                   title="$ 129.3 M"
                   Icon={BsFillXDiamondFill}
                   color={theme.green}
