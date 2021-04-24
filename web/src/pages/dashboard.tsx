@@ -6,14 +6,20 @@ import { ThemeContext } from 'styled-components';
 import { ImSearch } from 'react-icons/im';
 import { VscBellDot } from 'react-icons/vsc';
 import { FiChevronDown } from 'react-icons/fi';
+import { FaDollarSign } from 'react-icons/fa';
 
 import DashboardMenu from '@/components/DashboardMenu';
+import PrimaryMoneyCard from '@/components/PrimaryMoneyCard';
+import SecundaryMoneyCard from '@/components/SecundaryMoneyCard';
 
 import {
   Container,
   ContainerDash,
   ContainerHeader,
   ContainerOptionsHeader,
+  ContainerSavings,
+  ContainerEconomy,
+  ContainerThree,
   Option,
   OptionUser,
 } from '@/styles/dashboard';
@@ -46,6 +52,35 @@ const Dashboard: React.FC = () => {
               </OptionUser>
             </ContainerOptionsHeader>
           </ContainerHeader>
+          <ContainerSavings>
+            <ContainerEconomy>
+              <h2>Saldo</h2>
+              <PrimaryMoneyCard />
+            </ContainerEconomy>
+            <ContainerEconomy>
+              <h2>Economias secundárias</h2>
+              <ContainerThree>
+                <SecundaryMoneyCard
+                  name="Safiras"
+                  title="$ 29.3 B"
+                  Icon={FaDollarSign}
+                  color={theme.pink}
+                />
+                <SecundaryMoneyCard
+                  name="Safiras"
+                  title="$ 13 B"
+                  Icon={FaDollarSign}
+                  color={theme.yellow}
+                />
+                <SecundaryMoneyCard
+                  name="Safiras"
+                  title="$ 129.3 M"
+                  Icon={FaDollarSign}
+                  color={theme.green}
+                />
+              </ContainerThree>
+            </ContainerEconomy>
+          </ContainerSavings>
         </ContainerDash>
       </Container>
     </>

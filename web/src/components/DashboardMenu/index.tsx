@@ -42,7 +42,7 @@ const DashboardMenu: React.FC<{
           <path
             d="M15.1364 1.5H23.5V9.86364H15.1364V1.5Z"
             stroke={theme.cyan}
-            stroke-width="2"
+            strokeWidth="2"
           />
           <rect
             x="15.1364"
@@ -50,7 +50,7 @@ const DashboardMenu: React.FC<{
             width="8.36364"
             height="8.36364"
             stroke={theme.cyan}
-            stroke-width="2"
+            strokeWidth="2"
           />
           <rect
             x="1.5"
@@ -58,7 +58,7 @@ const DashboardMenu: React.FC<{
             width="8.36364"
             height="8.36364"
             stroke={theme.cyan}
-            stroke-width="2"
+            strokeWidth="2"
           />
           <path
             d="M0 8C0 3.58172 3.58172 0 8 0H11.3636V11.3636H0V8Z"
@@ -77,7 +77,7 @@ const DashboardMenu: React.FC<{
           <path
             d="M15.1364 1.5H23.5V9.86364H15.1364V1.5Z"
             stroke={theme.selection}
-            stroke-width="2"
+            strokeWidth="2"
           />
           <rect
             x="15.1364"
@@ -85,7 +85,7 @@ const DashboardMenu: React.FC<{
             width="8.36364"
             height="8.36364"
             stroke={theme.selection}
-            stroke-width="2"
+            strokeWidth="2"
           />
           <rect
             x="1.5"
@@ -93,12 +93,12 @@ const DashboardMenu: React.FC<{
             width="8.36364"
             height="8.36364"
             stroke={theme.selection}
-            stroke-width="2"
+            strokeWidth="2"
           />
           <path
             d="M1.5 1.5H9.86364V9.86364H1.5V1.5Z"
             stroke={theme.selection}
-            stroke-width="2"
+            strokeWidth="2"
           />
         </svg>
       ),
@@ -147,13 +147,11 @@ const DashboardMenu: React.FC<{
           src="/favicon.ico"
         />
       </OptionHome>
-      {pages.map(({ name, IconEnabled, IconDisabled, options = {} }) => (
-        <>
-          <Option key={name} {...options}>
-            {name === location ? <IconEnabled /> : <IconDisabled />}
-            {name === location && <Ball />}
-          </Option>
-        </>
+      {pages.map(({ name, IconEnabled, IconDisabled, options = {} }, index) => (
+        <Option key={name + index} {...options}>
+          {name === location ? <IconEnabled /> : <IconDisabled />}
+          {name === location && <Ball />}
+        </Option>
       ))}
       <div
         style={{

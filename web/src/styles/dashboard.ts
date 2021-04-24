@@ -51,7 +51,7 @@ export const OptionUser = styled(Option)`
   position: relative;
   padding: 12px 30px 12px 70px !important;
   justify-content: space-around;
-  gap: 6px;
+  gap: 8px;
   border-radius: 20px !important;
 
   & p {
@@ -69,4 +69,25 @@ export const OptionUser = styled(Option)`
   & svg * {
     stroke-width: 3px;
   }
+`;
+
+export const ContainerSavings = styled.div`
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 15px;
+`;
+
+export const ContainerEconomy = styled.div`
+  margin-top: 15px;
+
+  h2 {
+    font-size: 28px;
+    font-weight: 600;
+  }
+`;
+
+export const ContainerThree = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
 `;
