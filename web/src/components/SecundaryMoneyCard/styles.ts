@@ -9,6 +9,13 @@ export const Container = styled.div<{
   padding: 15px 25px;
   color: ${({ theme }) => theme.background};
   position: relative;
+  box-shadow: 0 0 5px ${({ theme }) => rgba(theme.background, 0.5)};
+  transition: box-shadow 0.4s, transform 0.4s;
+
+  &:hover {
+    box-shadow: 0 0 10px ${({ theme }) => rgba(theme.background, 0.5)};
+    transform: scale(1.025);
+  }
 `;
 
 export const Header = styled.header`
@@ -49,7 +56,7 @@ export const SubTitle = styled.p`
 export const Footer = styled.footer`
   display: flex;
   gap: 10px;
-  margin-top: 150px;
+  margin-top: 75px;
   z-index: 99999999;
 `;
 
@@ -64,9 +71,9 @@ export const ContainerIcon = styled.div<{
   border-radius: 10px;
   cursor: pointer;
   z-index: 999999999;
-  transition: filter 0.2s;
+  transition: filter 0.4s;
 
   &:hover {
-    filter: brightness(75%);
+    filter: brightness(65%);
   }
 `;

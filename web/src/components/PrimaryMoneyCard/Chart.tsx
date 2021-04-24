@@ -3,12 +3,22 @@ import { Line } from 'react-chartjs-2';
 import { Card } from './styles';
 
 const MyChart = () => {
+  const days = {
+    DOM: 28.0,
+    SEG: 18.5,
+    TERÇ: 29.0,
+    QUA: 30.8,
+    QUI: 16.4,
+    SEX: 35.3,
+    SÁB: 37.4,
+  };
+
   const data = {
-    labels: ['DOM', 'SEG', 'TERÇ', 'QUA', 'QUI', 'SEX', 'SÁB'],
+    labels: Object.keys(days),
     datasets: [
       {
         label: 'This week',
-        data: [24, 18, 16, 18, 24, 36, 28],
+        data: Object.values(days),
         // backgroundColor: gradientThisWeek,
         borderColor: 'transparent',
         pointBackgroundColor: '#FFFFFF',
@@ -49,34 +59,12 @@ const MyChart = () => {
     <Card>
       <Line data={data} options={options} />
       <div className="axis">
-        <div className="tick">
-          <span className="value value--this">$ 24 B</span>
-          MON
-        </div>
-        <div className="tick">
-          <span className="value value--this">$ 18 B</span>
-          TUE
-        </div>
-        <div className="tick">
-          <span className="value value--this">$ 16 B</span>
-          WED
-        </div>
-        <div className="tick">
-          <span className="value value--this">$ 18 B</span>
-          THU
-        </div>
-        <div className="tick">
-          <span className="value value--this">$ 24 B</span>
-          FRI
-        </div>
-        <div className="tick">
-          <span className="value value--this">$ 36 B</span>
-          SAT
-        </div>
-        <div className="tick">
-          <span className="value value--this">$ 28 B</span>
-          SUN
-        </div>
+        {Object.keys(days).map((day) => (
+          <div className="tick">
+            <span className="value value--this">$ {days[day]} B</span>
+            {day}
+          </div>
+        ))}
       </div>
     </Card>
   );

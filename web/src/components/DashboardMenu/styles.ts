@@ -11,7 +11,7 @@ export const Container = styled.nav`
   padding-top: 35px;
   gap: 18px;
   background-image: ${({ theme }) =>
-    `linear-gradient(${theme.background}, ${rgba(theme.comment, 0.25)}, ${
+    `linear-gradient(${theme.background}, ${rgba(theme.comment, 0.3)}, ${
       theme.background
     })`};
   border-bottom-left-radius: 45px;

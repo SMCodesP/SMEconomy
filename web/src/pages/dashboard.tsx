@@ -3,7 +3,8 @@ import { useContext } from 'react';
 
 import { ThemeContext } from 'styled-components';
 
-import { ImSearch } from 'react-icons/im';
+import { ImSearch, ImDiamonds } from 'react-icons/im';
+import { BsFillXDiamondFill } from 'react-icons/bs';
 import { VscBellDot } from 'react-icons/vsc';
 import { FiChevronDown } from 'react-icons/fi';
 import { FaDollarSign } from 'react-icons/fa';
@@ -62,20 +63,20 @@ const Dashboard: React.FC = () => {
               <ContainerThree>
                 <SecundaryMoneyCard
                   name="Safiras"
-                  title="$ 29.3 B"
+                  title="$ 293 K"
                   Icon={FaDollarSign}
                   color={theme.pink}
                 />
                 <SecundaryMoneyCard
                   name="Safiras"
                   title="$ 13 B"
-                  Icon={FaDollarSign}
+                  Icon={ImDiamonds}
                   color={theme.yellow}
                 />
                 <SecundaryMoneyCard
                   name="Safiras"
                   title="$ 129.3 M"
-                  Icon={FaDollarSign}
+                  Icon={BsFillXDiamondFill}
                   color={theme.green}
                 />
               </ContainerThree>

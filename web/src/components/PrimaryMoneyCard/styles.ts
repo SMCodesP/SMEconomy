@@ -8,6 +8,13 @@ export const Container = styled.div`
   color: ${({ theme }) => theme.background};
   position: relative;
   padding-bottom: 245px;
+  box-shadow: 0 0 5px ${({ theme }) => rgba(theme.background, 0.5)};
+  transition: box-shadow 0.4s, transform 0.4s;
+
+  &:hover {
+    box-shadow: 0 0 10px ${({ theme }) => rgba(theme.background, 0.5)};
+    transform: scale(1.02);
+  }
 `;
 
 export const Header = styled.header`
@@ -36,11 +43,11 @@ export const Title = styled.p`
 `;
 
 export const SubTitle = styled.p`
-  font-size: 14px;
+  font-size: 15px;
 `;
 
 export const Card = styled.div`
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 8px ${({ theme }) => rgba(theme.background, 0.2)};
   position: absolute;
   width: 90%;
   border-radius: 10px;
@@ -63,7 +70,7 @@ export const Card = styled.div`
     flex: 1;
     position: relative;
     overflow: hidden;
-    opacity: 0.2;
+    opacity: 0.5;
     font-size: 12px;
     text-align: center;
     line-height: 40px;
@@ -89,7 +96,7 @@ export const Card = styled.div`
     width: 100%;
     line-height: 50px;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 13px;
     opacity: 0;
   }
 
