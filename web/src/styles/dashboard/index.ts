@@ -80,7 +80,7 @@ export const OptionUser = styled(Option)`
 
 export const ContainerSavings = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 5fr 6fr;
   gap: 15px;
 `;
 

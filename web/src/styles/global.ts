@@ -29,7 +29,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   ::-webkit-scrollbar {
-    width: 5px;
+    width: 4px;
   }
   ::-moz-selection {
     background: ${({ theme }) => theme.comment};
