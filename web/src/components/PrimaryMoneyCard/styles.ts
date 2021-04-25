@@ -1,8 +1,10 @@
 import { rgba } from 'polished';
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  background: ${({ theme }) => rgba(theme.cyan, 0.75)};
+export const Container = styled.div<{
+  color?: string;
+}>`
+  background: ${({ theme, color }) => rgba(color || theme.cyan, 0.75)};
   border-radius: 25px;
   padding: 15px 25px;
   color: ${({ theme }) => theme.background};
@@ -44,6 +46,7 @@ export const Title = styled.p`
 
 export const SubTitle = styled.p`
   font-size: 15px;
+  font-weight: 600;
 `;
 
 export const Card = styled.div`

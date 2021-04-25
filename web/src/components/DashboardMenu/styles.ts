@@ -37,14 +37,17 @@ export const OptionHome = styled.li`
 
 export const Option = styled(OptionHome)`
   & * {
-    transition: color 0.4s;
+    transition: color 0.4s, stroke 0.4s;
   }
   &:hover {
     filter: brightness(100%);
     border-radius: 0;
+    color: ${({ theme }) => theme.cyan};
+    stroke: ${({ theme }) => theme.cyan};
   }
 
   &:hover * {
+    stroke: ${({ theme }) => theme.cyan};
     color: ${({ theme }) => theme.cyan};
   }
 `;

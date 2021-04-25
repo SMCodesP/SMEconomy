@@ -1,18 +1,8 @@
-import {useContext} from 'react'
+import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
 import { Line } from 'react-chartjs-2';
 
 import { Card } from './styles';
-
-const days = {
-  DOM: 28.0,
-  SEG: 18.5,
-  TERÇ: 29.0,
-  QUA: 30.8,
-  QUI: 16.4,
-  SEX: 35.3,
-  SÁB: 37.4,
-};
 
 const options = {
   elements: {
@@ -42,8 +32,12 @@ const options = {
   },
 };
 
-const MyChart = () => {
-  const theme = useContext(ThemeContext)
+const MyChart: React.FC<{
+  days: {
+    [key: string]: any;
+  };
+}> = ({ days }) => {
+  const theme = useContext(ThemeContext);
 
   const data = {
     labels: Object.keys(days),

@@ -7,19 +7,30 @@ import Chart from './Chart';
 
 import { Container, Header, Menu, Title, SubTitle } from './styles';
 
-const PrimaryMoneyCard: React.FC = () => {
+const PrimaryMoneyCard: React.FC<{
+  value: string;
+  subTitle: string;
+  color?: string;
+  days: {
+    [key: string]: any;
+  };
+}> = ({ value, days, subTitle, color }) => {
   const theme = useContext(ThemeContext);
 
+  if (!color) {
+    color = theme.cyan;
+  }
+
   return (
-    <Container>
+    <Container color={color}>
       <Header>
-        <Title>$ 17.6 B</Title>
+        <Title>{value}</Title>
         <Menu>
           <HiDotsVertical size={20} color={theme.currentLine} />
         </Menu>
       </Header>
-      <SubTitle>Transações</SubTitle>
-      <Chart />
+      <SubTitle>{subTitle}</SubTitle>
+      <Chart days={days} />
     </Container>
   );
 };

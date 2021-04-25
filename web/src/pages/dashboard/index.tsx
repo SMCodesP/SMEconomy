@@ -45,8 +45,8 @@ const options = [
   { value: '1 days', label: 'Hoje' },
   { value: '7 days', label: 'Semana' },
   { value: '30 days', label: 'Mês' },
-  { value: '365 days', label: 'Ano' }
-]
+  { value: '365 days', label: 'Ano' },
+];
 
 const Dashboard: React.FC = () => {
   const theme = useContext(ThemeContext);
@@ -79,7 +79,20 @@ const Dashboard: React.FC = () => {
           <ContainerSavings>
             <ContainerEconomy>
               <h2>Saldo</h2>
-              <PrimaryMoneyCard />
+              <PrimaryMoneyCard
+                value="$ 17.6 B"
+                subTitle="Transações"
+                days={{
+                  DOM: 28.0,
+                  SEG: 18.5,
+                  TERÇ: 29.0,
+                  QUA: 30.8,
+                  QUI: 16.4,
+                  SEX: 35.3,
+                  SÁB: 37.4,
+                }}
+                color={theme.cyan}
+              />
             </ContainerEconomy>
             <ContainerEconomy>
               <ContainerThree>
@@ -104,13 +117,15 @@ const Dashboard: React.FC = () => {
               </ContainerThree>
             </ContainerEconomy>
           </ContainerSavings>
-          <div style={{
-            width: '100%',
-            display: 'grid',
-            gridTemplateColumns: '5fr 3fr',
-            margin: '15px 0',
-            gap: '65px'
-          }}>
+          <div
+            style={{
+              width: '100%',
+              display: 'grid',
+              gridTemplateColumns: '5fr 3fr',
+              margin: '15px 0',
+              gap: '65px',
+            }}
+          >
             <ContainerTransaction>
               <HeaderTransaction>
                 <h2>Transferências</h2>
@@ -149,7 +164,9 @@ const Dashboard: React.FC = () => {
                       <ClanNameTransaction>OsM</ClanNameTransaction>
                     </ContainerUserTransaction>
                   </UserTransaction>
-                  <ValueTransaction color={theme.red}>$ - 19.00 B</ValueTransaction>
+                  <ValueTransaction color={theme.red}>
+                    $ - 19.00 B
+                  </ValueTransaction>
                   <DateTransaction>Hoje às 13H30</DateTransaction>
                 </tr>
                 <tr>
@@ -160,7 +177,9 @@ const Dashboard: React.FC = () => {
                       <ClanNameTransaction>OsM</ClanNameTransaction>
                     </ContainerUserTransaction>
                   </UserTransaction>
-                  <ValueTransaction color={theme.green}>$ 22.00 B</ValueTransaction>
+                  <ValueTransaction color={theme.green}>
+                    $ 22.00 B
+                  </ValueTransaction>
                   <DateTransaction>Hoje às 6H30</DateTransaction>
                 </tr>
                 <tr>
@@ -171,7 +190,9 @@ const Dashboard: React.FC = () => {
                       <ClanNameTransaction>OsM</ClanNameTransaction>
                     </ContainerUserTransaction>
                   </UserTransaction>
-                  <ValueTransaction color={theme.red}>$ - 7.00 M</ValueTransaction>
+                  <ValueTransaction color={theme.red}>
+                    $ - 7.00 M
+                  </ValueTransaction>
                   <DateTransaction>Ontem às 12H</DateTransaction>
                 </tr>
                 <tr>
@@ -182,7 +203,9 @@ const Dashboard: React.FC = () => {
                       <ClanNameTransaction>OsM</ClanNameTransaction>
                     </ContainerUserTransaction>
                   </UserTransaction>
-                  <ValueTransaction color={theme.red}>$ - 17.00 B</ValueTransaction>
+                  <ValueTransaction color={theme.red}>
+                    $ - 17.00 B
+                  </ValueTransaction>
                   <DateTransaction>Ontem às 22H20</DateTransaction>
                 </tr>
                 <tr>
@@ -193,14 +216,18 @@ const Dashboard: React.FC = () => {
                       <ClanNameTransaction>OsM</ClanNameTransaction>
                     </ContainerUserTransaction>
                   </UserTransaction>
-                  <ValueTransaction color={theme.red}>$ - 17.00 B</ValueTransaction>
+                  <ValueTransaction color={theme.red}>
+                    $ - 17.00 B
+                  </ValueTransaction>
                   <DateTransaction>20:40 - 22/04/21</DateTransaction>
                 </tr>
               </TableTransaction>
             </ContainerTransaction>
             <ContainerPayUser>
               <TitlePayUser>Envie dinheiro para amigos</TitlePayUser>
-              <AboutPayUser>Acesse aqui para enviar dinheiro para outros jogadores.</AboutPayUser>
+              <AboutPayUser>
+                Acesse aqui para enviar dinheiro para outros jogadores.
+              </AboutPayUser>
               <ButtonPayUser>Clique aqui</ButtonPayUser>
             </ContainerPayUser>
           </div>

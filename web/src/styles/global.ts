@@ -28,15 +28,14 @@ export const GlobalStyle = createGlobalStyle`
     outline: 0;
   }
 
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
   ::-moz-selection {
     background: ${({ theme }) => theme.comment};
   }
   ::selection {
     background: ${({ theme }) => theme.comment};
-  }
-
-  ::-webkit-scrollbar {
-    width: 4px;
   }
   ::-webkit-scrollbar-track {
     background: ${({ theme }) => theme.comment};

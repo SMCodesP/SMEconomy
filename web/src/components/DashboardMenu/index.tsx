@@ -6,7 +6,7 @@ import { ThemeContext } from 'styled-components';
 
 import { HiUserGroup } from 'react-icons/hi';
 import { BiWallet } from 'react-icons/bi';
-import { GoGraph } from 'react-icons/go';
+import { IoIosPaper } from 'react-icons/io';
 import { CgArrowsExchange } from 'react-icons/cg';
 import { FiLogOut } from 'react-icons/fi';
 
@@ -25,12 +25,14 @@ const DashboardMenu: React.FC<{
 
   const pages: {
     name: string;
+    href: string;
     IconEnabled: React.FC;
     IconDisabled: React.FC;
     options?: any;
   }[] = [
     {
       name: 'home',
+      href: '/dashboard',
       IconEnabled: () => (
         <svg
           width="25"
@@ -105,23 +107,27 @@ const DashboardMenu: React.FC<{
     },
     {
       name: 'wallet',
+      href: '/dashboard/wallet',
       IconEnabled: () => <BiWallet size={26} color={theme.cyan} />,
       IconDisabled: () => <BiWallet size={26} color={theme.selection} />,
     },
     {
-      name: 'graph',
-      IconEnabled: () => <GoGraph size={26} color={theme.cyan} />,
-      IconDisabled: () => <GoGraph size={26} color={theme.selection} />,
-    },
-    {
       name: 'exchange',
+      href: '/dashboard',
       IconEnabled: () => <CgArrowsExchange size={32} color={theme.cyan} />,
       IconDisabled: () => (
         <CgArrowsExchange size={32} color={theme.selection} />
       ),
     },
     {
+      name: 'graph',
+      href: '/dashboard',
+      IconEnabled: () => <IoIosPaper size={26} color={theme.cyan} />,
+      IconDisabled: () => <IoIosPaper size={26} color={theme.selection} />,
+    },
+    {
       name: 'users',
+      href: '/dashboard',
       IconEnabled: () => <HiUserGroup size={26} color={theme.cyan} />,
       IconDisabled: () => <HiUserGroup size={26} color={theme.selection} />,
     },
@@ -147,12 +153,18 @@ const DashboardMenu: React.FC<{
           src="/favicon.ico"
         />
       </OptionHome>
-      {pages.map(({ name, IconEnabled, IconDisabled, options = {} }, index) => (
-        <Option key={name + index} {...options}>
-          {name === location ? <IconEnabled /> : <IconDisabled />}
-          {name === location && <Ball />}
-        </Option>
-      ))}
+      {pages.map(
+        ({ name, IconEnabled, IconDisabled, href, options = {} }, index) => (
+          <Link key={name + index} href={href}>
+            <a>
+              <Option {...options}>
+                {name === location ? <IconEnabled /> : <IconDisabled />}
+                {name === location && <Ball />}
+              </Option>
+            </a>
+          </Link>
+        ),
+      )}
       <div
         style={{
           marginBottom: 25,
