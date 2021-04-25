@@ -21,7 +21,6 @@ export const Container = styled.div<{
 export const Header = styled.header`
   display: flex;
   justify-content: space-between;
-  z-index: 9999;
 `;
 
 export const Menu = styled.div`
@@ -32,7 +31,6 @@ export const Menu = styled.div`
   align-items: center;
   border-radius: 50%;
   cursor: pointer;
-  z-index: 99999;
   transition: background-color 0.4s;
 
   &:hover {
@@ -43,21 +41,18 @@ export const Menu = styled.div`
 export const Title = styled.p`
   font-size: 28px;
   font-weight: 700;
-  z-index: 999999;
 `;
 
 export const SubTitle = styled.p`
   font-size: 18px;
   font-weight: bold;
   color: ${({ color }) => color};
-  z-index: 9999999;
 `;
 
 export const Footer = styled.footer`
   display: flex;
   gap: 10px;
   margin-top: 75px;
-  z-index: 99999999;
 `;
 
 export const ContainerIcon = styled.div<{
@@ -70,7 +65,6 @@ export const ContainerIcon = styled.div<{
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
-  z-index: 999999999;
   transition: filter 0.4s;
 
   &:hover {
