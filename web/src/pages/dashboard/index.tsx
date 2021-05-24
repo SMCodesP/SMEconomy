@@ -219,7 +219,7 @@ const Dashboard: React.FC = () => {
                   <ValueTransaction color={theme.red}>
                     $ - 17.00 B
                   </ValueTransaction>
-                  <DateTransaction>20:40 - 22/04/21</DateTransaction>
+                  <DateTransaction>Ontem às 23H00</DateTransaction>
                 </tr>
               </TableTransaction>
             </ContainerTransaction>
