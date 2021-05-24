@@ -158,10 +158,10 @@ const Dashboard: React.FC = () => {
                 </tr>
                 <tr>
                   <UserTransaction>
-                    <AvatarTransaction src="https://minotar.net/avatar/Verdize" />
+                    <AvatarTransaction src="https://minotar.net/avatar/breze" />
                     <ContainerUserTransaction>
-                      <UsernameTransaction>SMCodes</UsernameTransaction>
-                      <ClanNameTransaction>OsM</ClanNameTransaction>
+                      <UsernameTransaction>breze</UsernameTransaction>
+                      <ClanNameTransaction>Sem clan</ClanNameTransaction>
                     </ContainerUserTransaction>
                   </UserTransaction>
                   <ValueTransaction color={theme.red}>
@@ -171,10 +171,10 @@ const Dashboard: React.FC = () => {
                 </tr>
                 <tr>
                   <UserTransaction>
-                    <AvatarTransaction src="https://minotar.net/avatar/Verdize" />
+                    <AvatarTransaction src="https://minotar.net/avatar/Console" />
                     <ContainerUserTransaction>
-                      <UsernameTransaction>SMCodes</UsernameTransaction>
-                      <ClanNameTransaction>OsM</ClanNameTransaction>
+                      <UsernameTransaction>Console</UsernameTransaction>
+                      <ClanNameTransaction>Sem clan</ClanNameTransaction>
                     </ContainerUserTransaction>
                   </UserTransaction>
                   <ValueTransaction color={theme.green}>
@@ -184,10 +184,10 @@ const Dashboard: React.FC = () => {
                 </tr>
                 <tr>
                   <UserTransaction>
-                    <AvatarTransaction src="https://minotar.net/avatar/Verdize" />
+                    <AvatarTransaction src="https://minotar.net/avatar/MisterSevent_" />
                     <ContainerUserTransaction>
-                      <UsernameTransaction>SMCodes</UsernameTransaction>
-                      <ClanNameTransaction>OsM</ClanNameTransaction>
+                      <UsernameTransaction>MisterSevent_</UsernameTransaction>
+                      <ClanNameTransaction>Sem clan</ClanNameTransaction>
                     </ContainerUserTransaction>
                   </UserTransaction>
                   <ValueTransaction color={theme.red}>
@@ -197,10 +197,10 @@ const Dashboard: React.FC = () => {
                 </tr>
                 <tr>
                   <UserTransaction>
-                    <AvatarTransaction src="https://minotar.net/avatar/Verdize" />
+                    <AvatarTransaction src="https://minotar.net/avatar/breze" />
                     <ContainerUserTransaction>
-                      <UsernameTransaction>SMCodes</UsernameTransaction>
-                      <ClanNameTransaction>OsM</ClanNameTransaction>
+                      <UsernameTransaction>breze</UsernameTransaction>
+                      <ClanNameTransaction>Sem clan</ClanNameTransaction>
                     </ContainerUserTransaction>
                   </UserTransaction>
                   <ValueTransaction color={theme.red}>
@@ -210,14 +210,14 @@ const Dashboard: React.FC = () => {
                 </tr>
                 <tr>
                   <UserTransaction>
-                    <AvatarTransaction src="https://minotar.net/avatar/Verdize" />
+                    <AvatarTransaction src="https://minotar.net/avatar/Console" />
                     <ContainerUserTransaction>
-                      <UsernameTransaction>SMCodes</UsernameTransaction>
-                      <ClanNameTransaction>OsM</ClanNameTransaction>
+                      <UsernameTransaction>Console</UsernameTransaction>
+                      <ClanNameTransaction>Sem clan</ClanNameTransaction>
                     </ContainerUserTransaction>
                   </UserTransaction>
-                  <ValueTransaction color={theme.red}>
-                    $ - 17.00 B
+                  <ValueTransaction color={theme.green}>
+                    $ 17.00 B
                   </ValueTransaction>
                   <DateTransaction>Ontem às 23H00</DateTransaction>
                 </tr>
