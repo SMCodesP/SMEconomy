@@ -59,6 +59,11 @@ const Select: React.FC<{
         }}
         theme={{
           borderRadius: 30,
+          spacing: {
+            baseUnit: 4,
+            controlHeight: 38,
+            menuGutter: 8,
+          },
           colors: {
             danger: '#DE350B',
             dangerLight: '#FFBDAD',

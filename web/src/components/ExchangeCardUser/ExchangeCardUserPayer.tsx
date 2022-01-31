@@ -1,9 +1,9 @@
-import { players } from '@/utils/data';
-import formatNumber from '@/utils/formatNumber';
-import React, { Dispatch, SetStateAction, useState } from 'react';
-import { useTheme } from 'styled-components';
-import { toast } from 'react-toastify';
-import Select from '../Select';
+import { players } from "@/utils/data";
+import formatNumber from "@/utils/formatNumber";
+import React, { Dispatch, SetStateAction, useState } from "react";
+import { useTheme } from "styled-components";
+import { toast } from "react-toastify";
+import Select from "../Select";
 
 import {
   AvatarUser,
@@ -15,7 +15,7 @@ import {
   ItemPreset,
   LabelMoney,
   Toast,
-} from './styles';
+} from "./styles";
 
 const ExchangeCardUserPayer: React.FC<{
   player: TPlayer;
@@ -35,8 +35,6 @@ const ExchangeCardUserPayer: React.FC<{
     setMoneySended((player.money / 100) * percental);
   };
 
-  console.log(theme);
-
   return (
     <Container>
       <AvatarUser src={`https://minotar.net/avatar/alex`} />
@@ -44,7 +42,7 @@ const ExchangeCardUserPayer: React.FC<{
         src={`https://minotar.net/avatar/${
           selectedPlayer.value.skin !== player.name
             ? selectedPlayer.value.skin.length === 0
-              ? 'alex'
+              ? "alex"
               : selectedPlayer.value.skin
             : player.skin
         }`}
@@ -59,15 +57,15 @@ const ExchangeCardUserPayer: React.FC<{
             value: p,
             label: p.name,
           }))}
-          disabled={player.name === 'SMCodes'}
+          disabled={player.name === "SMCodes"}
         />
       </fieldset>
       <div
         style={{
-          width: '100%',
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'space-between',
+          width: "100%",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
           gap: 15,
         }}
       >
@@ -88,8 +86,8 @@ const ExchangeCardUserPayer: React.FC<{
         <fieldset
           style={{
             flex: 2,
-            justifyContent: 'flex-end',
-            alignItems: 'flex-end',
+            justifyContent: "flex-end",
+            alignItems: "flex-end",
           }}
         >
           <Caption>À enviar</Caption>
@@ -106,8 +104,8 @@ const ExchangeCardUserPayer: React.FC<{
       <hr />
       <fieldset
         style={{
-          justifyContent: 'flex-end',
-          alignItems: 'flex-end',
+          justifyContent: "flex-end",
+          alignItems: "flex-end",
         }}
       >
         <Caption>Total após a transferência</Caption>
@@ -128,20 +126,20 @@ const ExchangeCardUserPayer: React.FC<{
                 </Toast>
               ),
               {
-                position: 'bottom-right',
+                position: "bottom-right",
                 autoClose: 4000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                theme: 'dark',
-              },
+                theme: "dark",
+              }
             );
           }, 2000);
         }}
       >
-        {sending ? 'Enviando...' : 'Enviar'}
+        {sending ? "Enviando..." : "Enviar"}
       </ButtonExchange>
     </Container>
   );
