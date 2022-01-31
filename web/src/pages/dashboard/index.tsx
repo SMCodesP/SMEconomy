@@ -17,15 +17,11 @@ import Select from '@/components/Select';
 import {
   Container,
   ContainerDash,
-  ContainerHeader,
-  ContainerOptionsHeader,
   ContainerSavings,
   ContainerEconomy,
   ContainerThree,
   ContainerTransaction,
   ContainerSelections,
-  Option,
-  OptionUser,
   HeaderTransaction,
   TableTransaction,
   UserTransaction,
@@ -40,6 +36,7 @@ import {
   AboutPayUser,
   ButtonPayUser,
 } from '@/styles/dashboard';
+import DashboardHeader from '@/components/DashboardHeader';
 
 const options = [
   { value: '1 days', label: 'Hoje' },
@@ -60,37 +57,44 @@ const Dashboard: React.FC = () => {
         <DashboardMenu location="home" />
 
         <ContainerDash>
-          <ContainerHeader>
-            <h1>Visão Geral</h1>
-            <ContainerOptionsHeader>
-              <Option>
-                <ImSearch size={20} color={theme.foreground} />
-              </Option>
-              <Option>
-                <VscBellDot size={20} color={theme.foreground} />
-              </Option>
-              <OptionUser>
-                <img src="https://minotar.net/avatar/Verdize" />
-                <p>SMCodes</p>
-                <FiChevronDown size={20} color={theme.foreground} />
-              </OptionUser>
-            </ContainerOptionsHeader>
-          </ContainerHeader>
+          <DashboardHeader title="Visão Geral" />
           <ContainerSavings>
             <ContainerEconomy>
               <h2>Saldo</h2>
               <PrimaryMoneyCard
                 value="$ 17.6 B"
                 subTitle="Transações"
-                days={{
-                  DOM: 28.0,
-                  SEG: 18.5,
-                  TERÇ: 29.0,
-                  QUA: 30.8,
-                  QUI: 16.4,
-                  SEX: 35.3,
-                  SÁB: 37.4,
-                }}
+                chartId="money"
+                days={[
+                  {
+                    name: 'DOM',
+                    uv: 28.0,
+                  },
+                  {
+                    name: 'SEG',
+                    uv: 0,
+                  },
+                  {
+                    name: 'TERÇ',
+                    uv: 29.0,
+                  },
+                  {
+                    name: 'QUA',
+                    uv: 30.8,
+                  },
+                  {
+                    name: 'QUI',
+                    uv: 16.4,
+                  },
+                  {
+                    name: 'SEX',
+                    uv: 35.3,
+                  },
+                  {
+                    name: 'SÁB',
+                    uv: 40,
+                  },
+                ]}
                 color={theme.cyan}
               />
             </ContainerEconomy>
@@ -132,6 +136,7 @@ const Dashboard: React.FC = () => {
                 <ContainerSelections>
                   <Select
                     width={125}
+                    defaultV={{ value: 1, label: '1 Dia' }}
                     options={[
                       { value: 1, label: '1 Dia' },
                       { value: 7, label: '7 Dias' },
@@ -141,6 +146,7 @@ const Dashboard: React.FC = () => {
                   />
                   <Select
                     width={160}
+                    defaultV={{ value: 'latest', label: 'Recentes' }}
                     options={[
                       { value: 'latest', label: 'Recentes' },
                       { value: 'highest', label: 'Maiores' },

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { ThemeContext } from 'styled-components';
-import { Line } from 'react-chartjs-2';
+import { LineChart, XAxis, Tooltip, CartesianGrid, Line, ResponsiveContainer, AreaChart, YAxis, Area } from 'recharts';
 
 import { Card } from './styles';
 
@@ -33,34 +33,30 @@ const options = {
 };
 
 const MyChart: React.FC<{
-  days: {
-    [key: string]: any;
-  };
-}> = ({ days }) => {
-  const theme = useContext(ThemeContext);
-
-  const data = {
-    labels: Object.keys(days),
-    datasets: [
-      {
-        label: 'This week',
-        data: Object.values(days),
-        borderColor: 'transparent',
-        pointBackgroundColor: theme.foreground,
-        pointBorderColor: theme.foreground,
-        lineTension: 0.4,
-      },
-    ],
-  };
-
+  days: any[];
+  color?: string;
+  id: string;
+}> = ({ days, color, id }) => {
   return (
     <Card>
-      <Line data={data} options={options} />
+      <ResponsiveContainer width='100%' height="100%" aspect={4}>
+        <AreaChart
+          data={days}
+        >
+          <defs>
+            <linearGradient id={`svg-${id}`} x1="0" y1="0" x2="0" y2="1">
+              <stop offset="10%" stopColor={color} stopOpacity={0.75}/>
+              <stop offset="90%" stopColor={color} stopOpacity={0}/>
+            </linearGradient>
+          </defs>
+          <Area type="monotone" dataKey="uv" stroke={color} fillOpacity={1} fill={`url(#svg-${id})`} />
+        </AreaChart>
+      </ResponsiveContainer>
       <div className="axis">
-        {Object.keys(days).map((day, index) => (
+        {days.map((day, index) => (
           <div className="tick" key={`tick-${index}`}>
-            <span className="value value--this">$ {days[day]} B</span>
-            {day}
+            <span className="value value--this">$ {day.uv} B</span>
+            {day.name}
           </div>
         ))}
       </div>

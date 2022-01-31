@@ -113,7 +113,7 @@ const DashboardMenu: React.FC<{
     },
     {
       name: 'exchange',
-      href: '/dashboard',
+      href: '/dashboard/exchange',
       IconEnabled: () => <CgArrowsExchange size={32} color={theme.cyan} />,
       IconDisabled: () => (
         <CgArrowsExchange size={32} color={theme.selection} />

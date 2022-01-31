@@ -3,23 +3,16 @@ import { useContext } from 'react';
 
 import { ThemeContext } from 'styled-components';
 
-import { ImSearch } from 'react-icons/im';
-import { VscBellDot } from 'react-icons/vsc';
-import { FiChevronDown } from 'react-icons/fi';
-
 import DashboardMenu from '@/components/DashboardMenu';
 import PrimaryMoneyCard from '@/components/PrimaryMoneyCard';
 
 import {
   Container,
   ContainerDash,
-  ContainerHeader,
-  ContainerOptionsHeader,
-  Option,
-  OptionUser,
 } from '@/styles/dashboard';
 
 import { ContainerSavings } from '@/styles/dashboard/wallet';
+import DashboardHeader from '@/components/DashboardHeader';
 
 const Wallet: React.FC = () => {
   const theme = useContext(ThemeContext);
@@ -33,37 +26,44 @@ const Wallet: React.FC = () => {
         <DashboardMenu location="wallet" />
 
         <ContainerDash>
-          <ContainerHeader>
-            <h1>Sua carteira</h1>
-            <ContainerOptionsHeader>
-              <Option>
-                <ImSearch size={20} color={theme.foreground} />
-              </Option>
-              <Option>
-                <VscBellDot size={20} color={theme.foreground} />
-              </Option>
-              <OptionUser>
-                <img src="https://minotar.net/avatar/Verdize" />
-                <p>SMCodes</p>
-                <FiChevronDown size={20} color={theme.foreground} />
-              </OptionUser>
-            </ContainerOptionsHeader>
-          </ContainerHeader>
+          <DashboardHeader title="Sua carteira" />
           <ContainerSavings>
             <div>
               <h2>Money</h2>
               <PrimaryMoneyCard
                 value="$ 829.28 B"
                 subTitle="Transações"
-                days={{
-                  DOM: 976.74,
-                  SEG: 156.12,
-                  TERÇ: 823.76,
-                  QUA: 356.41,
-                  QUI: 613.59,
-                  SEX: 738.71,
-                  SÁB: 568.73,
-                }}
+                chartId="money"
+                days={[
+                  {
+                    name: "DOM",
+                    uv: 148.0,
+                  },
+                  {
+                    name: "SEG",
+                    uv: 148.0,
+                  },
+                  {
+                    name: "TERÇ",
+                    uv: 189.0,
+                  },
+                  {
+                    name: "QUA",
+                    uv: 64.0,
+                  },
+                  {
+                    name: "QUI",
+                    uv: 132.0,
+                  },
+                  {
+                    name: "SEX",
+                    uv: 165.0,
+                  },
+                  {
+                    name: "SÁB",
+                    uv: 52.0,
+                  },
+                ]}
                 color={theme.cyan}
               />
             </div>
@@ -72,15 +72,37 @@ const Wallet: React.FC = () => {
               <PrimaryMoneyCard
                 value="$ 701.90 M"
                 subTitle="Transações"
-                days={{
-                  DOM: 859.98,
-                  SEG: 20.68,
-                  TERÇ: 812.71,
-                  QUA: 722.72,
-                  QUI: 584.73,
-                  SEX: 191.92,
-                  SÁB: 594.89,
-                }}
+                chartId="tokens"
+                days={[
+                  {
+                    name: "DOM",
+                    uv: 119.0,
+                  },
+                  {
+                    name: "SEG",
+                    uv: 79.0,
+                  },
+                  {
+                    name: "TERÇ",
+                    uv: 97.0,
+                  },
+                  {
+                    name: "QUA",
+                    uv: 77.0,
+                  },
+                  {
+                    name: "QUI",
+                    uv: 55.0,
+                  },
+                  {
+                    name: "SEX",
+                    uv: 88.0,
+                  },
+                  {
+                    name: "SÁB",
+                    uv: 78.0,
+                  },
+                ]}
                 color={theme.green}
               />
             </div>
@@ -89,15 +111,37 @@ const Wallet: React.FC = () => {
               <PrimaryMoneyCard
                 value="$ 668.17 K"
                 subTitle="Transações"
-                days={{
-                  DOM: 15.26,
-                  SEG: 567.16,
-                  TERÇ: 356.42,
-                  QUA: 23.46,
-                  QUI: 175.85,
-                  SEX: 560.18,
-                  SÁB: 687.73,
-                }}
+                chartId="blocks"
+                days={[
+                  {
+                    name: "DOM",
+                    uv: 80.0,
+                  },
+                  {
+                    name: "SEG",
+                    uv: 70.0,
+                  },
+                  {
+                    name: "TERÇ",
+                    uv: 137.0,
+                  },
+                  {
+                    name: "QUA",
+                    uv: 153.0,
+                  },
+                  {
+                    name: "QUI",
+                    uv: 55.0,
+                  },
+                  {
+                    name: "SEX",
+                    uv: 58.0,
+                  },
+                  {
+                    name: "SÁB",
+                    uv: 53.0,
+                  },
+                ]}
                 color={theme.red}
               />
             </div>
@@ -106,15 +150,37 @@ const Wallet: React.FC = () => {
               <PrimaryMoneyCard
                 value="$ 673.20 T"
                 subTitle="Transações"
-                days={{
-                  DOM: 115.25,
-                  SEG: 942.46,
-                  TERÇ: 545.33,
-                  QUA: 28.87,
-                  QUI: 18.27,
-                  SEX: 621.34,
-                  SÁB: 620.34,
-                }}
+                chartId="sapphires"
+                days={[
+                  {
+                    name: "DOM",
+                    uv: 192.0,
+                  },
+                  {
+                    name: "SEG",
+                    uv: 112.0,
+                  },
+                  {
+                    name: "TERÇ",
+                    uv: 66.0,
+                  },
+                  {
+                    name: "QUA",
+                    uv: 99.0,
+                  },
+                  {
+                    name: "QUI",
+                    uv: 50.0,
+                  },
+                  {
+                    name: "SEX",
+                    uv: 180.0,
+                  },
+                  {
+                    name: "SÁB",
+                    uv: 126.0,
+                  },
+                ]}
                 color={theme.yellow}
               />
             </div>
@@ -123,15 +189,37 @@ const Wallet: React.FC = () => {
               <PrimaryMoneyCard
                 value="$ 45.0 K"
                 subTitle="Transações"
-                days={{
-                  DOM: 491.67,
-                  SEG: 563.38,
-                  TERÇ: 609.46,
-                  QUA: 29.39,
-                  QUI: 614.48,
-                  SEX: 680.51,
-                  SÁB: 263.71,
-                }}
+                chartId="cash"
+                days={[
+                  {
+                    name: "DOM",
+                    uv: 131.0,
+                  },
+                  {
+                    name: "SEG",
+                    uv: 55.0,
+                  },
+                  {
+                    name: "TERÇ",
+                    uv: 63.0,
+                  },
+                  {
+                    name: "QUA",
+                    uv: 139.0,
+                  },
+                  {
+                    name: "QUI",
+                    uv: 57.0,
+                  },
+                  {
+                    name: "SEX",
+                    uv: 128.0,
+                  },
+                  {
+                    name: "SÁB",
+                    uv: 122.0,
+                  },
+                ]}
                 color={theme.purple}
               />
             </div>
