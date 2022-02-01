@@ -1,17 +1,16 @@
-import Head from 'next/head';
+import Head from "next/head";
 
-import DashboardMenu from '@/components/DashboardMenu';
-import DashboardHeader from '@/components/DashboardHeader';
+import DashboardMenu from "@/components/DashboardMenu";
+import DashboardHeader from "@/components/DashboardHeader";
 
-import { Container, ContainerDash } from '@/styles/dashboard';
+import { Container, ContainerDash } from "@/styles/dashboard";
 
-import { ContainerUsersExchange, TitleCard } from '@/styles/dashboard/exchange';
-import ExchangeCardUserPayer from '@/components/ExchangeCardUser/ExchangeCardUserPayer';
-import ExchangeCardUserReceiver from '@/components/ExchangeCardUser/ExchangeCardUserReceiver';
-import { RiArrowLeftRightFill } from 'react-icons/ri';
-import { useTheme } from 'styled-components';
-import { Triangle } from 'react-loader-spinner';
-import { useState } from 'react';
+import { ContainerUsersExchange } from "@/styles/dashboard/exchange";
+import ExchangeCardUserPayer from "@/components/ExchangeCardUser/ExchangeCardUserPayer";
+import ExchangeCardUserReceiver from "@/components/ExchangeCardUser/ExchangeCardUserReceiver";
+import { RiArrowLeftRightFill } from "react-icons/ri";
+import { Triangle } from "react-loader-spinner";
+import { useState } from "react";
 
 const Exchange: React.FC = () => {
   const [moneySended, setMoneySended] = useState(0);
@@ -20,7 +19,7 @@ const Exchange: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Dashboard - SpetacularNetwork</title>
+        <title>Transferência - SpetacularNetwork</title>
       </Head>
       <Container>
         <DashboardMenu location="exchange" />
@@ -30,8 +29,8 @@ const Exchange: React.FC = () => {
           <ContainerUsersExchange>
             <ExchangeCardUserPayer
               player={{
-                name: 'SMCodes',
-                skin: 'RIkKaY_',
+                name: "SMCodes",
+                skin: "RIkKaY_",
                 money: 5.0435025711562096e22,
               }}
               setMoneySended={setMoneySended}
@@ -48,8 +47,8 @@ const Exchange: React.FC = () => {
             </div>
             <ExchangeCardUserReceiver
               player={{
-                name: 'breze',
-                skin: 'breze',
+                name: "breze",
+                skin: "breze",
                 money: 7.552886149907141e21,
               }}
               moneySended={moneySended}

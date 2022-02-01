@@ -1,18 +1,15 @@
-import Head from 'next/head';
-import { useContext } from 'react';
+import Head from "next/head";
+import { useContext } from "react";
 
-import { ThemeContext } from 'styled-components';
+import { ThemeContext } from "styled-components";
 
-import DashboardMenu from '@/components/DashboardMenu';
-import PrimaryMoneyCard from '@/components/PrimaryMoneyCard';
+import DashboardMenu from "@/components/DashboardMenu";
+import PrimaryMoneyCard from "@/components/PrimaryMoneyCard";
 
-import {
-  Container,
-  ContainerDash,
-} from '@/styles/dashboard';
+import { Container, ContainerDash } from "@/styles/dashboard";
 
-import { ContainerSavings } from '@/styles/dashboard/wallet';
-import DashboardHeader from '@/components/DashboardHeader';
+import { ContainerSavings } from "@/styles/dashboard/wallet";
+import DashboardHeader from "@/components/DashboardHeader";
 
 const Wallet: React.FC = () => {
   const theme = useContext(ThemeContext);
@@ -20,7 +17,7 @@ const Wallet: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Dashboard - SpetacularNetwork</title>
+        <title>Cateira - SpetacularNetwork</title>
       </Head>
       <Container>
         <DashboardMenu location="wallet" />
@@ -103,7 +100,7 @@ const Wallet: React.FC = () => {
                     uv: 78.0,
                   },
                 ]}
-                color={theme.green}
+                color={theme.purple}
               />
             </div>
             <div>
@@ -142,7 +139,7 @@ const Wallet: React.FC = () => {
                     uv: 53.0,
                   },
                 ]}
-                color={theme.red}
+                color={theme.green}
               />
             </div>
             <div>
@@ -181,7 +178,7 @@ const Wallet: React.FC = () => {
                     uv: 126.0,
                   },
                 ]}
-                color={theme.yellow}
+                color={theme.pink}
               />
             </div>
             <div>
@@ -220,7 +217,7 @@ const Wallet: React.FC = () => {
                     uv: 122.0,
                   },
                 ]}
-                color={theme.purple}
+                color={theme.yellow}
               />
             </div>
           </ContainerSavings>

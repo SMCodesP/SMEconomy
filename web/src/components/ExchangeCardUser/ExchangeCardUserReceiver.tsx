@@ -1,10 +1,10 @@
-import { players } from '@/utils/data';
-import formatNumber from '@/utils/formatNumber';
-import React, { useState } from 'react';
-import { useTheme } from 'styled-components';
-import Select from '../Select';
+import { players } from "@/utils/data";
+import formatNumber from "@/utils/formatNumber";
+import React, { useState } from "react";
+import { useTheme } from "styled-components";
+import Select from "../Select";
 
-import { AvatarUser, Caption, Container, Input, LabelMoney } from './styles';
+import { AvatarUser, Caption, Container, Input, LabelMoney } from "./styles";
 
 const ExchangeCardUserReceiver: React.FC<{
   player: TPlayer;
@@ -24,7 +24,7 @@ const ExchangeCardUserReceiver: React.FC<{
         src={`https://minotar.net/avatar/${
           selectedPlayer.value.skin !== player.name
             ? selectedPlayer.value.skin.length === 0
-              ? 'alex'
+              ? "alex"
               : selectedPlayer.value.skin
             : player.skin
         }`}
@@ -39,13 +39,13 @@ const ExchangeCardUserReceiver: React.FC<{
             value: p,
             label: p.name,
           }))}
-          disabled={player.name === 'SMCodes'}
+          disabled={player.name === "SMCodes"}
         />
       </fieldset>
       <fieldset
         style={{
-          justifyContent: 'flex-end',
-          alignItems: 'flex-end',
+          justifyContent: "flex-end",
+          alignItems: "flex-end",
         }}
       >
         <Caption>À receber</Caption>
@@ -54,15 +54,15 @@ const ExchangeCardUserReceiver: React.FC<{
       <hr />
       <fieldset
         style={{
-          justifyContent: 'flex-end',
-          alignItems: 'flex-end',
+          justifyContent: "flex-end",
+          alignItems: "flex-end",
         }}
       >
         <Caption>Total após a transferência</Caption>
         <LabelMoney color={theme.green}>
-          ${' '}
+          ${" "}
           {formatNumber(
-            Number(selectedPlayer.value.money) + Number(moneySended || 0),
+            Number(selectedPlayer.value.money) + Number(moneySended || 0)
           )}
         </LabelMoney>
       </fieldset>

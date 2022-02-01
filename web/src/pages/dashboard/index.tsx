@@ -1,18 +1,18 @@
-import Head from 'next/head';
-import { useContext } from 'react';
+import Head from "next/head";
+import { useContext } from "react";
 
-import { ThemeContext } from 'styled-components';
+import { ThemeContext } from "styled-components";
 
-import { ImSearch, ImDiamonds } from 'react-icons/im';
-import { BsFillXDiamondFill } from 'react-icons/bs';
-import { VscBellDot } from 'react-icons/vsc';
-import { FiChevronDown } from 'react-icons/fi';
-import { FaDollarSign } from 'react-icons/fa';
+import { ImSearch, ImDiamonds } from "react-icons/im";
+import { BsFillXDiamondFill } from "react-icons/bs";
+import { VscBellDot } from "react-icons/vsc";
+import { FiChevronDown } from "react-icons/fi";
+import { FaDollarSign } from "react-icons/fa";
 
-import DashboardMenu from '@/components/DashboardMenu';
-import PrimaryMoneyCard from '@/components/PrimaryMoneyCard';
-import SecundaryMoneyCard from '@/components/SecundaryMoneyCard';
-import Select from '@/components/Select';
+import DashboardMenu from "@/components/DashboardMenu";
+import PrimaryMoneyCard from "@/components/PrimaryMoneyCard";
+import SecundaryMoneyCard from "@/components/SecundaryMoneyCard";
+import Select from "@/components/Select";
 
 import {
   Container,
@@ -35,14 +35,14 @@ import {
   TitlePayUser,
   AboutPayUser,
   ButtonPayUser,
-} from '@/styles/dashboard';
-import DashboardHeader from '@/components/DashboardHeader';
+} from "@/styles/dashboard";
+import DashboardHeader from "@/components/DashboardHeader";
 
 const options = [
-  { value: '1 days', label: 'Hoje' },
-  { value: '7 days', label: 'Semana' },
-  { value: '30 days', label: 'Mês' },
-  { value: '365 days', label: 'Ano' },
+  { value: "1 days", label: "Hoje" },
+  { value: "7 days", label: "Semana" },
+  { value: "30 days", label: "Mês" },
+  { value: "365 days", label: "Ano" },
 ];
 
 const Dashboard: React.FC = () => {
@@ -67,31 +67,31 @@ const Dashboard: React.FC = () => {
                 chartId="money"
                 days={[
                   {
-                    name: 'DOM',
+                    name: "DOM",
                     uv: 28.0,
                   },
                   {
-                    name: 'SEG',
+                    name: "SEG",
                     uv: 0,
                   },
                   {
-                    name: 'TERÇ',
+                    name: "TERÇ",
                     uv: 29.0,
                   },
                   {
-                    name: 'QUA',
+                    name: "QUA",
                     uv: 30.8,
                   },
                   {
-                    name: 'QUI',
+                    name: "QUI",
                     uv: 16.4,
                   },
                   {
-                    name: 'SEX',
+                    name: "SEX",
                     uv: 35.3,
                   },
                   {
-                    name: 'SÁB',
+                    name: "SÁB",
                     uv: 40,
                   },
                 ]}
@@ -110,7 +110,7 @@ const Dashboard: React.FC = () => {
                   name="Tokens"
                   title="$ 13 B"
                   Icon={ImDiamonds}
-                  color={theme.yellow}
+                  color={theme.purple}
                 />
                 <SecundaryMoneyCard
                   name="Blocos"
@@ -123,11 +123,11 @@ const Dashboard: React.FC = () => {
           </ContainerSavings>
           <div
             style={{
-              width: '100%',
-              display: 'grid',
-              gridTemplateColumns: '5fr 3fr',
-              margin: '15px 0',
-              gap: '65px',
+              width: "100%",
+              display: "grid",
+              gridTemplateColumns: "5fr 3fr",
+              margin: "15px 0",
+              gap: "65px",
             }}
           >
             <ContainerTransaction>
@@ -136,22 +136,22 @@ const Dashboard: React.FC = () => {
                 <ContainerSelections>
                   <Select
                     width={125}
-                    defaultV={{ value: 1, label: '1 Dia' }}
+                    defaultV={{ value: 1, label: "1 Dia" }}
                     options={[
-                      { value: 1, label: '1 Dia' },
-                      { value: 7, label: '7 Dias' },
-                      { value: 30, label: '1 Mês' },
-                      { value: 365, label: '1 Ano' },
+                      { value: 1, label: "1 Dia" },
+                      { value: 7, label: "7 Dias" },
+                      { value: 30, label: "1 Mês" },
+                      { value: 365, label: "1 Ano" },
                     ]}
                   />
                   <Select
                     width={160}
-                    defaultV={{ value: 'latest', label: 'Recentes' }}
+                    defaultV={{ value: "latest", label: "Recentes" }}
                     options={[
-                      { value: 'latest', label: 'Recentes' },
-                      { value: 'highest', label: 'Maiores' },
-                      { value: 'lower', label: 'Menores' },
-                      { value: 'clan', label: 'Seu clan' },
+                      { value: "latest", label: "Recentes" },
+                      { value: "highest", label: "Maiores" },
+                      { value: "lower", label: "Menores" },
+                      { value: "clan", label: "Seu clan" },
                     ]}
                   />
                 </ContainerSelections>

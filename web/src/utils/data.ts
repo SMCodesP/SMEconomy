@@ -1,22 +1,32 @@
 export const players = [
   {
-    name: 'SMCodes',
-    skin: 'RIkKaY_',
+    name: "SMCodes",
+    skin: "RIkKaY_",
+    money: 0,
   },
   {
-    name: 'Smileyyy9',
-    skin: 'gffdo',
+    name: "xBlaqcku",
+    skin: "xBlaqcku",
+    money: 0,
   },
   {
-    name: 'NotCr1mson',
-    skin: 'gffdo',
+    name: "FerWeii",
+    skin: "FerWeii",
+    money: 0,
   },
   {
-    name: 'bestrico',
-    skin: 'gffdo',
+    name: "zKamiBot",
+    skin: "zKamiBot",
+    money: 0,
   },
   {
-    name: 'RIkKaY_',
-    skin: 'gffdo',
+    name: "RIkKaY_",
+    skin: "RIkKaY_",
+    money: 0,
+  },
+  {
+    name: "xBlaqcku",
+    skin: "xBlaqcku",
+    money: 0,
   },
 ];
