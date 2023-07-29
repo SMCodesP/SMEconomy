@@ -1,22 +1,22 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import { useContext } from 'react';
+import { useContext } from "react";
 
-import { ThemeContext } from 'styled-components';
+import { ThemeContext } from "styled-components";
 
-import { HiUserGroup } from 'react-icons/hi';
-import { BiWallet } from 'react-icons/bi';
-import { IoIosPaper } from 'react-icons/io';
-import { CgArrowsExchange } from 'react-icons/cg';
-import { FiLogOut } from 'react-icons/fi';
+import { HiUserGroup } from "react-icons/hi";
+import { BiWallet } from "react-icons/bi";
+import { IoIosPaper } from "react-icons/io";
+import { CgArrowsExchange } from "react-icons/cg";
+import { FiLogOut } from "react-icons/fi";
 
 import {
   Ball,
   Container,
   OptionHome,
   Option,
-} from '@/components/DashboardMenu/styles';
-import { darken } from 'polished';
+} from "@/components/DashboardMenu/styles";
+import { darken } from "polished";
 
 const DashboardMenu: React.FC<{
   location: string;
@@ -31,8 +31,8 @@ const DashboardMenu: React.FC<{
     options?: any;
   }[] = [
     {
-      name: 'home',
-      href: '/dashboard',
+      name: "home",
+      href: "/dashboard",
       IconEnabled: () => (
         <svg
           width="25"
@@ -106,28 +106,28 @@ const DashboardMenu: React.FC<{
       ),
     },
     {
-      name: 'wallet',
-      href: '/dashboard/wallet',
+      name: "wallet",
+      href: "/dashboard/wallet",
       IconEnabled: () => <BiWallet size={26} color={theme.cyan} />,
       IconDisabled: () => <BiWallet size={26} color={theme.selection} />,
     },
     {
-      name: 'exchange',
-      href: '/dashboard',
+      name: "exchange",
+      href: "/dashboard/exchange",
       IconEnabled: () => <CgArrowsExchange size={32} color={theme.cyan} />,
       IconDisabled: () => (
         <CgArrowsExchange size={32} color={theme.selection} />
       ),
     },
     {
-      name: 'graph',
-      href: '/dashboard',
+      name: "logs",
+      href: "/dashboard/logs",
       IconEnabled: () => <IoIosPaper size={26} color={theme.cyan} />,
       IconDisabled: () => <IoIosPaper size={26} color={theme.selection} />,
     },
     {
-      name: 'users',
-      href: '/dashboard',
+      name: "users",
+      href: "/dashboard",
       IconEnabled: () => <HiUserGroup size={26} color={theme.cyan} />,
       IconDisabled: () => <HiUserGroup size={26} color={theme.selection} />,
     },
@@ -139,7 +139,7 @@ const DashboardMenu: React.FC<{
         style={{
           backgroundImage: `linear-gradient(to bottom right, ${darken(
             0.25,
-            theme.yellow,
+            theme.yellow
           )}, ${theme.yellow})`,
           padding: 8,
           marginBottom: 10,
@@ -163,12 +163,12 @@ const DashboardMenu: React.FC<{
               </Option>
             </a>
           </Link>
-        ),
+        )
       )}
       <div
         style={{
           marginBottom: 25,
-          marginTop: 'auto',
+          marginTop: "auto",
         }}
       >
         <Link href="/">

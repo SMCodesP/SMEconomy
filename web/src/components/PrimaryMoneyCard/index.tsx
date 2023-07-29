@@ -11,10 +11,9 @@ const PrimaryMoneyCard: React.FC<{
   value: string;
   subTitle: string;
   color?: string;
-  days: {
-    [key: string]: any;
-  };
-}> = ({ value, days, subTitle, color }) => {
+  days: any[];
+  chartId: string;
+}> = ({ value, days, subTitle, color, chartId }) => {
   const theme = useContext(ThemeContext);
 
   if (!color) {
@@ -30,7 +29,7 @@ const PrimaryMoneyCard: React.FC<{
         </Menu>
       </Header>
       <SubTitle>{subTitle}</SubTitle>
-      <Chart days={days} />
+      <Chart color={color} days={days} id={chartId} />
     </Container>
   );
 };

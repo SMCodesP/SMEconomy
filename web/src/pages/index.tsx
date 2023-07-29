@@ -1,13 +1,13 @@
-import Head from 'next/head';
-import { useRouter } from 'next/router';
+import Head from "next/head";
+import { useRouter } from "next/router";
 
-import { useContext } from 'react';
+import { FormEvent, useContext } from "react";
 
-import { ThemeContext } from 'styled-components';
+import { ThemeContext } from "styled-components";
 
-import { FaUser, FaLock, FaDiscord, FaGithub } from 'react-icons/fa';
+import { FaUser, FaLock, FaDiscord, FaGithub } from "react-icons/fa";
 
-import { rgba } from 'polished';
+import { rgba } from "polished";
 
 import {
   Container,
@@ -16,15 +16,15 @@ import {
   Input,
   Button,
   ContainerSocial,
-} from '@/styles/home';
+} from "@/styles/home";
 
 export default function Home() {
   const router = useRouter();
   const theme = useContext(ThemeContext);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    router.push('/dashboard');
+    router.push("/dashboard");
   };
 
   return (
@@ -55,13 +55,18 @@ export default function Home() {
           <Button type="submit">Entrar</Button>
         </ContainerLogin>
         <ContainerSocial>
-          <a href="https://github.com/SMCodesP/SMEconomy" target="_blank">
+          <a
+            href="https://github.com/SMCodesP/SMEconomy"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaGithub size={32} color={theme.background} />
           </a>
           <hr />
           <a
             href="https://discord.com/users/520311747098312725"
             target="_blank"
+            rel="noreferrer"
           >
             <FaDiscord size={32} color={theme.background} />
           </a>

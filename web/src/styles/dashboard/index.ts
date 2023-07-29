@@ -8,74 +8,14 @@ export const Container = styled.div`
 `;
 
 export const ContainerDash = styled.main`
+  display: flex;
+  flex-direction: column;
   background: ${({ theme }) => theme.currentLine};
   border-radius: 35px;
   width: 100%;
-  padding: 15px;
+  padding: 15px 30px;
   margin-left: 70px;
   margin-bottom: 10px;
-`;
-
-export const ContainerHeader = styled.header`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-
-  h1 {
-    font-weight: 800;
-    font-size: 38px;
-  }
-`;
-
-export const ContainerOptionsHeader = styled.div`
-  display: flex;
-  gap: 10px;
-  padding: 5px 0;
-`;
-
-export const Option = styled.div`
-  background: ${({ theme }) => theme.background};
-  padding: 12px;
-  border-radius: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: fit-content;
-  cursor: pointer;
-  transition: filter 0.4s;
-
-  * {
-    margin: 0;
-    padding: 0;
-  }
-
-  &:hover {
-    filter: brightness(50%);
-  }
-`;
-
-export const OptionUser = styled(Option)`
-  position: relative;
-  padding: 12px 30px 12px 70px !important;
-  justify-content: space-around;
-  gap: 8px;
-  border-radius: 20px !important;
-
-  & p {
-    font-weight: 600;
-  }
-
-  & img {
-    width: 52px;
-    border-radius: 52px;
-    top: -15px;
-    left: 10px;
-    position: absolute;
-  }
-
-  & svg * {
-    stroke-width: 3px;
-  }
 `;
 
 export const ContainerSavings = styled.div`

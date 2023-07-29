@@ -1,5 +1,9 @@
-module.exports = {
-  future: {
-    webpack5: true,
-  },
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  experimental: {
+    styledComponents: true
+  }
 }
+
+module.exports = nextConfig
